@@ -1,0 +1,12 @@
+.container-cards_footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media (max-width:450px) {
+    .container-cards_footer {
+        margin-top: 1em;
+        flex-direction: column;
+    }
+}

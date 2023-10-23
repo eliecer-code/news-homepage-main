@@ -1,0 +1,48 @@
+.container-content_card {
+    color: black;
+    display: flex;
+    overflow: hidden;
+    gap: 1em;
+    width: 30%;
+    margin-top: 3em;
+    margin-bottom: 1em;
+
+    .card_image {
+        width: 110px;
+    }
+
+    .container-card_body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .number_card {
+            color: var(--grayish-blue);
+            font-size: 2em;
+            font-weight: 800;
+        }
+
+        .title_card {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--very-dark-blue);
+            text-decoration: none;
+        }
+        .title_card:hover {
+            color: var(--soft-red);
+
+        }
+
+        .paragraph_card {
+            /* font-size: .9em; */
+            color: var(--dark-grayish-blue);
+        }
+    }
+}
+
+@media (max-width:450px) {
+    .container-content_card {
+        width: 100%;
+        /* flex-direction: column; */
+    }
+}

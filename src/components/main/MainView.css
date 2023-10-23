@@ -1,0 +1,148 @@
+.grid-container {
+    height: calc(100vh - 110px);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    overflow: hidden;
+    gap: 1em;
+    /* box-sizing: border-box; */
+
+    & .grid-container_main {
+        grid-column: 1/ 9;
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        color: var(--very-dark-blue);
+        gap: 2em;
+
+
+        .grid-container_image {
+            grid-row: 1/2;
+            background-image: url("../../assets/images/image-web-3-desktop.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .grid-container_info {
+            grid-row: 2 / 3;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+
+            .grid-container_infoTitle {
+                padding-top: 10px;
+                grid-column: 1 / 6;
+                font-size: 4em;
+                font-weight: 800;
+            }
+
+            .grid-container_infoContent {
+                grid-column: 6 / 11;
+                padding-top: 14px;
+                font-size: 1.2em;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: space-between;
+
+                .infoParagraph {
+                    color: var(--dark-grayish-blue);
+                    line-height: 1.5em;
+
+                }
+
+                .grid-container_linkmore {
+                    padding: 1em 3em;
+                    background: var(--soft-red);
+                    color: var(--off-white);
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    letter-spacing: 5px;
+                }
+
+                .grid-container_linkmore:hover {
+                    background-color: var(--very-dark-blue);
+                }
+            }
+
+        }
+    }
+
+    & .grid-container_aside {
+        grid-column: 9 / 13;
+        background: var(--very-dark-blue);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0 1.5em;
+
+        .grid-container_asideTitle {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--soft-orange);
+        }
+
+        hr {
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width:450px) {
+    .grid-container {
+
+        /* background-color: red; */
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(12, 1fr);
+        height: auto;
+        gap: 5em;
+
+        .grid-container_main {
+            grid-column: 1 /2;
+            grid-row: 1 / 7;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(2, 1fr);
+            height: calc(100vh - 110px);
+
+            .grid-container_image {
+
+                background-image: url('../../assets/images/image-web-3-mobile.jpg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            .grid-container_info {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(2, auto);
+
+                .grid-container_infoTitle {
+                    grid-column: 1 / 2;
+                    grid-row: 1 / 2;
+                    font-size: 2.5em;
+                }
+
+                .grid-container_infoContent {
+                    grid-column: 1 / 2;
+                    grid-row: 2 / 3;
+
+                    .infoParagraph {
+                        font-size: 15px;
+                    }
+
+                    .grid-container_linkmore {
+                        margin-top: 1em;
+                        padding: 1em 1.5em;
+                        letter-spacing: 3px;
+                    }
+                }
+
+            }
+
+        }
+
+        .grid-container_aside {
+            grid-column: 1 / 2;
+            grid-row: 7 / 13;
+        }
+    }
+}
